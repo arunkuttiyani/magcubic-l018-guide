@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Lite Home: a minimal Android TV launcher.
+     INTERNET is used only for the optional weather (Open-Meteo, HTTPS, see Weather.java); with the
+     Weather setting off, the launcher makes no network connections at all.
+     Network / Wi-Fi / Bluetooth permissions are read-only status for the Control Center panel. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dev.lite.home"
+    android:versionCode="5"
+    android:versionName="4.0">
+
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+
+    <application
+        android:label="Lite Home"
+        android:icon="@drawable/icon"
+        android:banner="@drawable/banner"
+        android:allowBackup="false"
+        android:networkSecurityConfig="@xml/network_security"
+        android:usesCleartextTraffic="false"
+        android:theme="@style/Home">
+
+        <activity
+            android:name=".HomeActivity"
+            android:launchMode="singleTask"
+            android:stateNotNeeded="true"
+            android:clearTaskOnLaunch="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout|uiMode|density">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Lite Home settings"
+            android:excludeFromRecents="true"
+            android:screenOrientation="landscape" />
+    </application>
+</manifest>

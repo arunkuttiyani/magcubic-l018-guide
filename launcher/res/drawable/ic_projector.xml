@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Projector icon: a body with a lens and a light beam. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#FFFFFFFF"
+        android:pathData="M3,8a2,2 0,0 1,2 -2h8a2,2 0,0 1,2 2v1h2.4l3.6,-2v10l-3.6,-2L15,15v1a2,2 0,0 1,-2 2L5,18a2,2 0,0 1,-2 -2zM8,13a2,2 0,1 0,0 -4,2 2,0 0,0 0,4z" />
+</vector>

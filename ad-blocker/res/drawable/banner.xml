@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The TV banner (16:9 tile): the same shield on a deep teal-to-blue field with a soft glow behind it. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="320dp" android:height="180dp" android:viewportWidth="320" android:viewportHeight="180">
+    <path android:pathData="M0,0h320v180h-320z">
+        <aapt:attr name="android:fillColor">
+            <gradient android:type="linear" android:startX="0" android:startY="0" android:endX="320" android:endY="180"
+                android:startColor="#FF0FA3A0" android:endColor="#FF0D2F86" />
+        </aapt:attr>
+    </path>
+    <!-- glow behind the shield -->
+    <path android:pathData="M160,90 m-125,0 a125,125 0 1 0 250,0 a125,125 0 1 0 -250,0">
+        <aapt:attr name="android:fillColor">
+            <gradient android:type="radial" android:centerX="160" android:centerY="90" android:gradientRadius="125"
+                android:startColor="#4DFFFFFF" android:endColor="#00FFFFFF" />
+        </aapt:attr>
+    </path>
+    <group android:translateX="68" android:translateY="30" android:scaleX="1.7" android:scaleY="1.7">
+        <!-- shield shadow and shield (same shape as the icon, 108-unit box, shifted to centre) -->
+        <path android:fillColor="#40061A3A"
+            android:pathData="M54,6 L80,15.5 L80,36 C80,54 68.5,66.5 54,72.5 C39.5,66.5 28,54 28,36 L28,15.5 Z" />
+        <path android:fillColor="#FFFFFFFF"
+            android:pathData="M54,2 L80,11.5 L80,32 C80,50 68.5,62.5 54,68.5 C39.5,62.5 28,50 28,32 L28,11.5 Z" />
+        <path android:strokeColor="#FF1866D2" android:strokeWidth="5.5" android:fillColor="#00000000"
+            android:pathData="M40.5,32.5 a13.5,13.5 0 1 0 27,0 a13.5,13.5 0 1 0 -27,0" />
+        <path android:strokeColor="#FF1866D2" android:strokeWidth="5.5" android:strokeLineCap="round"
+            android:pathData="M44.5,42 L63.5,23" />
+    </group>
+</vector>

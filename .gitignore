@@ -1,0 +1,16 @@
+# personal data from your box
+backups/
+.DS_Store
+
+# launcher build output and local signing key
+launcher/build/
+launcher/*.apk
+launcher/*.idsig
+launcher/*.keystore
+
+# Simple Ad Blocker build output, local signing key and the generated blocklist
+ad-blocker/build/
+ad-blocker/*.apk
+ad-blocker/*.idsig
+ad-blocker/*.keystore
+ad-blocker/assets/blocklist.bin
