@@ -70,6 +70,21 @@ echo "Rules applied (and will reapply on every boot)."
 
 # ---- 2. debloat -----------------------------------------------------------------------
 if [ "$SKIP_DEBLOAT" = 0 ]; then
+  say "Malware check"
+  MALWARE="com.hotack.silentsdk com.htc.expandsdk"
+  FOUND_MALWARE=0
+  for pkg in $MALWARE; do
+    if has_pkg "$pkg"; then
+      echo "!! FOUND: $pkg — this has been identified as malware on this device family, disabling it"
+      adb_ shell pm disable-user --user 0 "$pkg" >/dev/null 2>&1
+      FOUND_MALWARE=1
+    fi
+  done
+  [ "$FOUND_MALWARE" = 0 ] && echo "Neither known malware package was found on this unit."
+  for pkg in com.htc.eventuploadservice android.rockchip.update.service com.huawei.connection; do
+    has_pkg "$pkg" && echo "note: $pkg is present — review it yourself (see MANUAL.md Part 3), not auto-disabled"
+  done
+
   say "Debloat"
   DISABLE_SAFE="com.android.dynsystem com.android.managedprovisioning com.android.traceur"
   for pkg in $DISABLE_SAFE; do
